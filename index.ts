@@ -97,7 +97,7 @@ app.put(`${apiUrl}/events/:id`, upload.single("image"), async (req, res) => {
   const body = req.body;
   console.log(eventId);
 
-  const updatedFields = {
+  const updatedFields: any = {
     updatedAt: Timestamp.fromNumber(new Date().getTime()),
   };
   if (body.name) updatedFields["name"] = body.name;
