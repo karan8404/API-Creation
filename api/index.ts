@@ -25,6 +25,10 @@ app.use(express.urlencoded({ extended: true }));
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
+app.get("/", (req, res) => {
+  res.send("Express on Vercel")
+});
+
 app.get(`${apiUrl}/events`, async (req, res) => {
   const type = req.query.type?.toString();
   if (type === "latest") {
